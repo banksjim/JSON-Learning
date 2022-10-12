@@ -7,3 +7,15 @@
     "name2" : "value",
     "name3" : "value"
 }
+
+
+{
+  "name": [
+    {
+      "name": "value"
+    },
+    {
+      "name": "value"
+    }
+  ]
+}
