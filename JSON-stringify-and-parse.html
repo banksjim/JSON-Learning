@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var myJSON = {"name": "Laurance", "age": 36};
+        console.log("Logging the myJSON object...");
+        console.log(myJSON);
+
+        // Converts a JSON object into a string
+        var myJSONstringified = JSON.stringify(myJSON);
+        console.log("Logging the myJSON object coverted to a string...");
+        console.log(myJSONstringified);
+
+        // Parses a valid JSON formated string into a JSON object 
+        var myJSONobjectified = JSON.parse(myJSONstringified);
+        console.log("Logging the parsing of the myJSONstringified string back to a JSON object...");
+        console.log(myJSONobjectified);
+
+    </script>
+
+</body>
+</html>
