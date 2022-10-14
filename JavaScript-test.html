@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Javascript Course</title>
+</head>
+<body>
+    <script>
+        var tString = "Hello";
+        var tString2 = 'Hello2';
+        var tNumber = 3;
+        var tBoolean = true;
+        var tNull = null;
+        var tUndefined = undefined;
+        var tArray = ['test', 30, [5, 6, 6]];
+        var tObjects = {"first": "Laurence"};
+        var tObjects2 = {'first': 'Laurence'};
+        var tObjects3 = {};
+        var tObjects5 = {'myArray': tArray};
+        var institutionObject = {};
+        var phoneContacts = [{'Main': '417-235-0000'}, {'TellerLine': '417-236-5555'}];
+        var emailAddresses = {'Main': 'service@fsbpurdy.com', 'TellerLine': 'tellers@fsbpurdy.com'};
+
+        tObjects3.first = 'Laurence';
+        tObjects3['last'] = 'Snuffle';
+
+        tObjects5.myObj = tObjects3;
+
+        institutionObject.institutionName = "First State Bank of Purdy";
+        institutionObject.institutionPhoneNumbers = phoneContacts;
+        institutionObject.institutionEmailAddresses = emailAddresses;
+    </script>
+</body>
+</html>
