@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    First name: <input type="text" id="firstName">
+    Age: <input type="number" id="age">
+
+    <div id="addbutton">Add to Storage</div>
+    <div id="viewbutton">View Storage</div>
+
+
+    <script>
+        document.getElementById('addbutton').addEventListener('click', addToStorage);
+        document.getElementById('viewbutton').addEventListener('click', viewStorage);
+
+        function addToStorage() {
+            let tempFirstName = document.getElementById('firstName').value;
+            let tempAge = document.getElementById('age').value;
+
+            let myObj = {"firstName": tempFirstName, "age": tempAge};
+
+            console.log(myObj);
+
+            localStorage.setItem('tester', JSON.stringify(myObj));
+            
+            console.log('Clicked: ' + JSON.stringify(myObj));
+        }
+
+        function viewStorage() {
+            let tempHolder = localStorage.getItem('tester');
+
+            let myData = JSON.parse(tempHolder);
+            
+            console.log(myData);
+            console.log(JSON.stringify(myData.firstName));
+            console.log(JSON.stringify(myData.age));
+        }
+    </script>
+
+</body>
+</html>
