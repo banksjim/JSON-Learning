@@ -8,16 +8,20 @@
 </head>
 <body>
     
-    First name: <input type="text" id="firstName">
-    Age: <input type="number" id="age">
-
     <div id="addbutton">Add to Storage</div>
     <div id="viewbutton">View Storage</div>
+    
+    First name: <input type="text" id="firstName">
+    Age: <input type="number" id="age">
 
 
     <script>
         document.getElementById('addbutton').addEventListener('click', addToStorage);
         document.getElementById('viewbutton').addEventListener('click', viewStorage);
+
+        const people = JSON.parse(localStorage.getItem('localKey1')) || {"firstName": "default", "age": "0"};
+
+        console.log('People: ' + people);
 
         function addToStorage() {
             let tempFirstName = document.getElementById('firstName').value;
@@ -27,15 +31,13 @@
 
             console.log(myObj);
 
-            localStorage.setItem('tester', JSON.stringify(myObj));
+            localStorage.setItem('localKey1', JSON.stringify(myObj));
             
             console.log('Clicked: ' + JSON.stringify(myObj));
         }
 
         function viewStorage() {
-            let tempHolder = localStorage.getItem('tester');
-
-            let myData = JSON.parse(tempHolder);
+            let myData = JSON.parse(localStorage.getItem('localKey1')) || people;;
             
             console.log(myData);
             console.log(JSON.stringify(myData.firstName));
