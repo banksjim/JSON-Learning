@@ -23,18 +23,17 @@
             console.log('clicked');
             output.innerHTML = "WORKING";
             
-            const url = "http://my-json-server.typicode.com/typicode/demo/comments";
+            const url2 = "http://localhost:3000/persons?id=2";
 
-            fetch(url)
+            fetch(url2)
             .then(function(response){
                 console.log(response.status);
                 return response.text()
             })
             .then(function(data){
-                console.log(data);
+                console.log(JSON.parse(data));
             })
         }
-
     </script>
 
 </body>
