@@ -9,9 +9,10 @@
     { "id": 2, "body": "some comment", "postId": 1 }
   ],
   "profile": {
-    "name": "typicode",
-    "first": "Laurence",
-    "last": "Banks",
-    "age": 51
-  }
+    "name": "typicode"
+  },
+  "persons": [
+    { "id": 1, "first": "Jim", "last": "Banks", "age": 51 },
+    { "id": 2, "first": "Danny", "last": "Kost", "age": 66 }
+  ]
 }
