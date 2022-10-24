@@ -10,5 +10,10 @@
   ],
   "profile": {
     "name": "typicode"
+  },
+  "test": {
+    "first": "Laurence";
+    "last": "Banks";
+    "age": 51
   }
 }
