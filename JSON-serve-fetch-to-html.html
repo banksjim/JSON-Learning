@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="getJSONbutton">Get JSON</div>
+    <div id="output"></div>
+
+    <script>
+        const getJSONbutton = document.getElementById('getJSONbutton');
+        const output = document.querySelector('#output');
+
+        getJSONbutton.addEventListener('click', addJSON);
+
+        function addJSON() {
+            console.log('clicked');
+            output.innerHTML = "WORKING";
+            
+            const url2 = "http://localhost:3000/persons?id=2";
+
+            fetch(url2)
+            .then(function(response){
+                console.log(response.status);
+                return response.json()
+            })
+            .then(function(data){
+                console.log(data);
+                output.innerHTML = "First Name = " + data.first + " | Last Name = " + data.last + " | Age = " + data.age;
+            })
+        }
+    </script>
+
+</body>
+</html>
