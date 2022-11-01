@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="getJSONbutton">Get User</div>
+    <div id="output"></div>
+
+    <script>
+        const getJSONbutton = document.getElementById('getJSONbutton');
+        const output = document.querySelector('#output');
+
+        getJSONbutton.addEventListener('click', addJSON);
+
+        function addJSON() {          
+            const url = "https://randomuser.me/api/?results=1";
+
+            fetch(url).then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                let people = data.results;
+                
+                console.log(people[0].name.first);    // Valid format 1
+                console.log(people[0].name["last"]);  // Valid format 2
+
+                output.innerHTML = "<br>" + people[0].name.first + " " + people[0].name["last"] + 
+                  "<br>" + people[0].location.street.number + " " + people[0].location.street.name +
+                  "<br>" + people[0].location.city + ", " + people[0].location.state + "  " + people[0].location.postcode;
+            })
+        }
+    </script>
+
+</body>
+</html>
